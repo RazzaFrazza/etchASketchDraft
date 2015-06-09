@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+    <link href="stylesheet.css" rel="stylesheet" type="text/css" />
+    <title>Razzakun's Etch A Sketch</title>
+</head>
+
+<body>
+    <center>
+        <h1>Welcome to Razzakun's Etch A Sketch</h1>
+        <center>
+            <center>
+                <div id="verticalSquaresQuestion">How many vertical squares of Etch A Sketch Space do you want?</div>
+            </center>
+            <br>
+            <center>
+                <input id="vsquareInput" type="text" value="" />
+            </center>
+            <br>
+            <center>
+                <input id="vsubmit" type="button" value="Submit" />
+            </center>
+            <br>
+            <center>
+                <div id="horizontalSquaresQuestion">How many horizontal squares of Etch A Sketch Space do you want?</div>
+            </center>
+            <br>
+            <center>
+                <input id="hsquareInput" type="text" value="" />
+            </center>
+            <br>
+            <center>
+                <input id="hsubmit" type="button" value="Submit" />
+            </center>
+</body>
+
+</html>
+<script>
+$(document).ready(function() {
+
+
+    var creatingVDivs = 0;
+    var creatingHDivs = 0;
+    var createHContainer = "<div id= hContainer></div>";
+    var createVContainer = "<div id= vContainer></div>";
+    var createScreen = "<div id=screen></div>";
+    var createInner="<div id=inner></div>";
+    var createPanel="<button class='panel'></button>";
+    var createHorizontalDivs = "<div class= hsquare><center></center></div>";
+    var createVerticalDivs = "<div class= vsquare><center></center></div>";
+    var trueNumberOfVerticalSquares = 0;
+    var trueNumberOfHorizontalSquares = 0;
+    var $numOfVerticalSquares = $("#vsquareInput");
+    var $numOfHorizontalSquares = $("#hsquareInput");
+    var createEtchASketchLogoDiv = "<div id = logo><center><h3>Thank you for trying Razzakun's Etch A Sketch! </h3></center></div>";
+    var clearQuestion = "<div id= clearQuestion><center><h2>Do you want to start over?</h2></center></div>";
+    var clearQuestionSpace = "<br>";
+    var clearQuestionSubmit = "<center><input id='clearSubmit' type='button' value='Yes!' /></center>";
+    var verticalSquaresQuestion = "<center><div id='verticalSquaresQuestion'>How many vertical squares of Etch A Sketch Space do you want?</div></center>";
+    var vSquareInput = "<center><input id='vsquareInput' type='text' value='' /></center>";
+    var vSubmit = "<center><input id='vsubmit' type='button' value='Submit' /></center>";
+    var horizontalSquaresQuestion = "<br><br><center><div id='horizontalSquaresQuestion'>How many horizontal squares of Etch A Sketch Space do you want?</div></center>";
+    var hSquareInput = "<center><input id='hsquareInput' type='text' value='' /></center>";
+    var hSubmit = "<center><input id='hsubmit' type='button' value='Submit' /></center>";
+
+
+    $("#vsubmit").click(function() {
+
+        trueNumberOfVerticalSquares = $numOfVerticalSquares.val();
+        alert(trueNumberOfVerticalSquares + " vertical squares will be created. Click OK if that's okay.");
+
+        for (creatingVDivs = 0; creatingVDivs < trueNumberOfVerticalSquares; creatingVDivs++) {
+
+        	$("body").append(createScreen);
+        	$("body").append(createInner);
+            $("body").append(createVerticalDivs);
+            $(".vsquare").height("20px");
+            $(".vsquare").width("20px");
+            $(".vsquare").css("margin", "0px");
+            $(".vsquare").css("padding", "0px");
+            $(".vsquare").css("background-color", "#eef7ff");
+            $(".vsquare").css("border-style", "solid");
+            $(".vsquare").css("border-color", "blue");
+
+        }
+
+        if("#hContainer"){
+
+
+
+        }
+
+        else {
+
+        	$('body').append(createVContainer);
+        }
+
+        if (creatingVDivs >= trueNumberOfVerticalSquares) {
+
+            $("#logo").detach();
+            $("#inner").prepend($(".vsquare"));
+            $("#vsubmit").detach();
+            $("#vsquareInput").detach();
+            $("#verticalSquaresQuestion").detach();
+            $("#clearQuestion").detach();
+            $("<br>").detach();
+            $("#clearSubmit").detach();
+            $("#container").before(createEtchASketchLogoDiv);
+            $("#logo").before(clearQuestion);
+            $("#logo").before(clearQuestionSpace);
+            $("#clearQuestion").after(clearQuestionSubmit);
+
+
+            $("#clearSubmit").click(function() {
+
+
+                alert("Are you sure you really want to erase your hard work? Click OK if you are.");
+
+
+                location.reload();
+
+
+            });
+
+        }
+
+    });
+
+    $("#hsubmit").click(function() {
+
+        trueNumberOfHorizontalSquares = $numOfHorizontalSquares.val();
+
+        alert(trueNumberOfHorizontalSquares + " horizontal squares will be created. Click OK if that's okay.");
+
+
+        for (creatingHDivs = 0; creatingHDivs < trueNumberOfHorizontalSquares; creatingHDivs++) {
+
+
+
+            $("body").append(createHorizontalDivs);
+            $(".hsquare").height("20px");
+            $(".hsquare").width("20px");
+            $(".hsquare").css("margin", "0px");
+            $(".hsquare").css("background-color", "#eef7ff");
+            $(".hsquare").css("padding", "0px");
+            $(".hsquare").css("float", "left");
+            $(".hsquare").css("display", "inline-block");
+            $(".hsquare").css("border-style", "solid");
+            $(".hsquare").css("border-color", "blue");
+
+        }
+
+        if("#vContainer"){
+
+
+
+        }
+
+        else {
+
+        	$('body').append(createHContainer);
+        }
+
+        if (creatingHDivs >= trueNumberOfHorizontalSquares) {
+
+            $("body").append(createContainer);
+            $("#logo").detach();
+            $("#container").prepend($(".hsquare"));
+            $("#hsubmit").detach();
+            $("#hsquareInput").detach();
+            $("#horizontalSquaresQuestion").detach();
+            $("#clearQuestion").detach();
+            $("<br>").detach();
+            $("#clearSubmit").detach();
+            $("#container").before(createEtchASketchLogoDiv);
+            $("#logo").before(clearQuestion);
+            $("#logo").before(clearQuestionSpace);
+            $("#clearQuestion").after(clearQuestionSubmit);
+
+
+            $("#clearSubmit").off("click").on("click", function() {
+
+
+                alert("Are you sure you really want to erase your hard work? Click OK if you are.");
+
+                location.reload();
+
+
+            });
+
+        }
+
+
+    });
+
+
+});
+</script>
