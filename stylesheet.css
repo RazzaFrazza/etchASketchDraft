@@ -1,0 +1,104 @@
+html, div, button, {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	font: inherit;
+	line-height: 1;
+}
+
+
+#hcontainer {
+	width: 80%;
+	min-width: 750px;
+	height: 100%;
+	background:
+		-webkit-radial-gradient(
+		#cc0000 50%, #800000 70%, #660000 95% );
+	background:
+		-moz-radial-gradient(
+		#cc0000 50%, #800000 70%, #660000 75% );
+	background:
+		-o-radial-gradient(
+		#cc0000 50%, #800000 70%, #660000 75% );
+	background:
+		-ms-radial-gradient(
+		#cc0000 50%, #800000 70%, #660000 75% );
+	background: 
+		radial-gradient (
+			#cc0000 50%, #800000 70%, #660000 95%);	
+	border-radius: 15px;
+	margin: 20px auto;
+	padding-bottom: 20px;
+	text-align: center;
+	box-shadow: inset 5px 5px 15px black, inset 5px 5px 10px #fff, inset -5px -5px 15px black;
+}
+
+#vcontainer {
+	width: 80%;
+	min-width: 750px;
+	height: 100%;
+	background:
+		-webkit-radial-gradient(
+		#cc0000 50%, #800000 70%, #660000 95% );
+	background:
+		-moz-radial-gradient(
+		#cc0000 50%, #800000 70%, #660000 75% );
+	background:
+		-o-radial-gradient(
+		#cc0000 50%, #800000 70%, #660000 75% );
+	background:
+		-ms-radial-gradient(
+		#cc0000 50%, #800000 70%, #660000 75% );
+	background: 
+		radial-gradient (
+			#cc0000 50%, #800000 70%, #660000 95%);	
+	border-radius: 15px;
+	margin: 20px auto;
+	padding-bottom: 20px;
+	text-align: center;
+	box-shadow: inset 5px 5px 15px black, inset 5px 5px 10px #fff, inset -5px -5px 15px black;
+}
+
+
+#screen {
+	background-color: #adcc51;
+	width: 75%;
+	margin: 1em auto;
+	border-radius: 10px;
+}
+
+#inner {
+	overflow: hidden;
+	height: 1%;
+	display: inline-block;
+	margin: auto;
+	border: 1px solid #83993e;
+}
+
+#panel {
+	float: left;
+	margin-left: 2em;
+}
+
+
+h1 {
+	color: #666;
+	font-family: "Pacifico", "Arial Black", Arial;
+	font-weight: 200;
+	font-size: 2em;
+	padding-top: 0.5em;
+	text-shadow: 1px -1px #333, 2px -3px #111, -1px 1px #aaa;
+}
+
+button {
+	background-color: #ffffb2;
+	border-radius: 50%;
+	height: 4em;
+	width: 4em;
+	font-family: "Courier New", Courier, Monospace;
+	font-weight: bold;
+	box-shadow: 4px 6px 10px #111;
+}
+
+
+
